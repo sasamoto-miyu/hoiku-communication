@@ -1,0 +1,74 @@
+.hoiku{
+  height: 100vh;
+  width: 100vw;
+
+  &_main{
+    display: flex;
+
+    &_message{
+      height: 100vh;
+      width: calc(100vw - 300px);
+      overflow: scroll;
+
+      &1{
+        background-color: cornsilk;
+        width: 900px;
+        margin: 0 auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
+
+        &_title{
+          height: 60px;
+          font-size: 40px;
+          text-align: center;
+          line-height: 60px;
+          background-color: orange;
+          font-family: arial, sans-serif;
+        }
+        &_content{
+          font-size: 20px;
+          font-family: arial, sans-serif;
+          text-align: center;
+        }
+        &_image{
+          margin-left: 260px;
+          margin-top: 20px;
+        }
+        &_time{
+          padding-bottom: 40px;
+          text-align: center;
+          padding-left: 250px;
+          font-family: arial, sans-serif;
+        }
+      }
+    }
+  }
+}
+
+.edit_btn{
+  height: 30px;
+  width: 100px;
+  background-color: orange;
+  color: whitesmoke;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-family: arial, sans-serif;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.destroy_btn{
+  height: 30px;
+  width: 100px;
+  background-color: blue;
+  color: whitesmoke;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-family: arial, sans-serif;
+  float: right;
+  text-align: center;
+  text-decoration: none;
+  line-height: 30px;
+}

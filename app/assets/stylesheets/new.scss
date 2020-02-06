@@ -1,0 +1,70 @@
+.new_content{
+  height: 100vh;
+  width: 100vw;
+
+  &_hoiku-header{
+    height: 150px;
+  width: 100vw;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+
+  &_name{
+    font-size: 60px;
+    color: whitesmoke;
+    font-family: arial, sans-serif;
+    margin-left: 400px;
+  }
+
+  &_keizi{
+    font-size: 60px;
+    color: whitesmoke;
+    font-family: arial, sans-serif;
+    margin-left: 50px;
+  }
+  }
+
+  &_create{
+    height: 1000px;
+    width: 1000px;
+    background-color: powderblue;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    color: whitesmoke;
+    font-size: 50px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: arial, sans-serif;
+
+  }
+
+  &_title-space{
+    height: 40px;
+    width: 100px;
+    background-color: blue;
+  }
+
+  
+}
+
+.title_space{
+  height: 50px;
+  width: 800px;
+  font-size: 30px;
+}
+
+.content_space{
+  height: 600px;
+  width: 800px;
+  font-size: 20px;
+  margin-top: 30px;
+  overflow: scroll;
+}
+
+
+.send_btn{
+  background-color: orange;
+  height: 50px;
+  width: 200px;
+}

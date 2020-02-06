@@ -1,0 +1,15 @@
+.new_content
+  .new_content_hoiku-header
+    .new_content_hoiku-header_name
+      AA保育園
+    .new_content_hoiku-header_keizi
+      掲示板
+  .new_content_create
+    = form_with model: @tweet, local: true do |f|
+      投稿する
+      .new_content_create-title-space
+      = f.text_field :title, placeholder: "Title", class: "title_space"
+      = f.file_field :image, placeholder: "Image Url", class: "image_space"
+      = f.text_area :text, placeholder: "Content", class: "content_space"
+      = f.submit "SEND", class: "send_btn"
+      

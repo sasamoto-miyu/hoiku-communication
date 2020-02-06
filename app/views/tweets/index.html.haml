@@ -1,0 +1,21 @@
+.hoiku
+  .hoiku_header
+    = render "tweets/header"
+  .hoiku_main
+    .hoiku_main_sidebar
+      = render "tweets/sidebar"
+    .hoiku_main_message
+      - @tweets.each do |tweet|
+        .hoiku_main_message1
+          .hoiku_main_message1_title
+            = tweet.title
+          .hoiku_main_message1_image
+            = image_tag tweet.image.url, class: 'lower-message__image' if tweet.image.present?
+          .hoiku_main_message1_content
+            = simple_format(tweet.text)
+          .hoiku_main_message1_time
+            = tweet.created_at.strftime("%Y年%m月%d日 %H時%M分")
+            =link_to "削除","/tweets/#{tweet.id}",method: :delete, class: "destroy_btn"
+            =link_to "編集","/tweets/#{tweet.id}/edit", method: :get, class: "edit_btn"
+            
+        

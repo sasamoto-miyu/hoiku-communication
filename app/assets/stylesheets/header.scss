@@ -1,0 +1,30 @@
+.hoiku-header{
+  height: 150px;
+  width: 100vw;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+
+  &_name{
+    font-size: 60px;
+    color: whitesmoke;
+    font-family: arial, sans-serif;
+    margin-left: 400px;
+  }
+
+  &_keizi{
+    font-size: 60px;
+    color: whitesmoke;
+    font-family: arial, sans-serif;
+    margin-left: 50px;
+  }
+}
+
+.sidebar_btn{
+  height: 50px;
+  width: 100px;
+  background-color: orange;
+  margin-left: 300px;
+  color: white;
+  font-size: 17px;
+}
