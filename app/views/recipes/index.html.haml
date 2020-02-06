@@ -1,0 +1,44 @@
+.hoiku
+  .hoiku-header
+    .hoiku-header_name
+      AA保育園
+    .hoiku-header_keizi
+      掲示板
+    .hoiku-header_create
+      =form_with do |f|
+        =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='/recipes/new'"
+  .hoiku_main
+    .hoiku_main_sidebar
+      = render "tweets/sidebar"
+    .hoiku_main_message
+      - @recipe.each do |recipe|
+        .hoiku_main_message1
+          .hoiku_main_message1_title
+            = recipe.title
+          .hoiku_main_message1_image
+            = image_tag recipe.image.url, class: 'lower-message__image' if recipe.image.present?
+          .hoiku_main_message1_content
+            = simple_format(recipe.food)
+          .hoiku_main_message1_content2
+            = simple_format(recipe.recipe)
+          .hoiku_main_message1_time
+            = recipe.created_at.strftime("%Y年%m月%d日 %H時%M分")
+            =link_to "削除","/recipes/#{recipe.id}",method: :delete, class: "destroy_btn"
+            -# =link_to "編集","/tweets/#{tweet.id}/edit", method: :get, class: "edit_btn"
+    -# .hoiku_main_recipe
+    -#   - @recipe.each do |recipe|
+    -#     .hoiku_main_recipe1
+    -#       .hoiku_main_recipe1-title
+    -#         = recipe.title
+    -#       .hoiku_main_recipe1-image
+    -#         = image_tag recipe.image.url, class: 'lower-message__image' if recipe.image.present?
+    -#       .hoiku_main_recipe1-food
+    -#         = simple_format(recipe.food)
+    -#       .hoiku_main_recipe1-recipe
+    -#         = simple_format(recipe.recipe)
+    -#       .hoiku_main_recipe1-time
+    -#         = recipe.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    -#         =link_to "削除","/recipes/#{recipe.id}",method: :delete, class: "destroy_btn"
+    -#         -# =link_to "編集","/tweets/#{tweet.id}/edit", method: :get, class: "edit_btn"
+        
+  

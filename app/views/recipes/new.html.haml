@@ -1,0 +1,15 @@
+.new_content
+  .new_content_hoiku-header
+    .new_content_hoiku-header_name
+      AA保育園
+    .new_content_hoiku-header_keizi
+      掲示板
+  .new_content_create_recipe
+    = form_with model: @recipe, local: true do |f|
+      投稿する　RECIPE
+      .new_content_create-recipe_title-space
+      = f.text_field :title, placeholder: "Title", class: "title_space"
+      = f.file_field :image, placeholder: "Image Url", class: "image_space"
+      = f.text_area :food, placeholder: "材料を入力してください", class: "food_space"
+      = f.text_area :recipe, placeholder: "作り方を入力してください", class: "recipe_space"
+      = f.submit "SEND", class: "send_btn"
