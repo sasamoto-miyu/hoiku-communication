@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   post  '/tweets/new' => 'tweets#create'
   resources :posts, only: [:new, :create]
 
-  resources :recipes, only: [:index, :new, :create, :destroy, :edit]
+  resources :recipes, only: [:index, :new, :create, :destroy, :edit, :update]
    
 end
