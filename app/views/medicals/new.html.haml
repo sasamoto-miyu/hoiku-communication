@@ -1,0 +1,19 @@
+.new_content
+  .new_content_hoiku-header
+    .new_content_hoiku-header_name
+      AA保育園
+    .new_content_hoiku-header_keizi
+      掲示板
+  .new_content_create_medical
+    = form_with model: @medical, local: true do |f|
+      投稿する　MEDICAL
+      .new_content_create-medical_title-space
+        = f.text_field :title, placeholder: "Title", class: "title_space"
+      .new_content_create_medical_image-space
+        写真：
+        = f.file_field :image, placeholder: "Image Url", class: "image_space"
+        MAP：
+        = f.file_field :map, placeholder: "Map Url", class: "image_space"
+      = f.text_area :text, placeholder: "テキストを入力してください", class: "text1_space"
+      = f.text_field :site_url, placeholder: "サイトのurlを入力してください", class: "url_space"
+      = f.submit "SEND", class: "send_btn"

@@ -1,0 +1,32 @@
+.hoiku
+  .hoiku-header
+    .hoiku-header_name
+      AA保育園
+    .hoiku-header_keizi
+      掲示板
+    .hoiku-header_create
+      =form_with do |f|
+        =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='/medicals/new'"
+  .hoiku_main
+    .hoiku_main_sidebar
+      = render "tweets/sidebar"
+    .hoiku_main_message
+      .hoiku_main_message_introduction
+        ここでは、保育園近隣の病院を紹介したり、流行っている病気のついてや、その予防法も紹介します。
+        %br
+        分からないことや困ったことがあれば、いつでも職員にご相談くださいね！
+      - @medical.each do |medical|
+        .hoiku_main_message1
+          .hoiku_main_message1_title
+            = medical.title
+          .hoiku_main_message1_image-map
+            = image_tag medical.image.url, class: 'lower-message__image' if medical.image.present?
+            = image_tag medical.map.url, class: 'lower-message__image2' if medical.map.present?
+          .hoiku_main_message1_content
+            = simple_format(medical.text)
+          .hoiku_main_message1_content2
+            =medical.site_url
+          .hoiku_main_message1_time
+            = medical.created_at.strftime("%Y年%m月%d日")
+            -# =link_to "削除","/recipes/#{recipe.id}",method: :delete, class: "destroy_btn"
+            -# =link_to "編集","/recipes/#{recipe.id}/edit", method: :get, class: "edit_btn"

@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :posts, only: [:new, :create]
 
   resources :recipes, only: [:index, :new, :create, :destroy, :edit, :update]
+  resources :medicals, only: [:index, :new, :create]
    
 end
