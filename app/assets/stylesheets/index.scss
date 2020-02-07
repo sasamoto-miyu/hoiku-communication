@@ -41,6 +41,17 @@
           font-family: arial, sans-serif;
         }
       }
+
+      &_introduction{
+        height: 100px;
+        width: 1000px;
+        background-color:yellow;
+        margin: 0 auto;
+        margin-top: 10px;
+        line-height: 33px;
+        text-align: center;
+        font-family: arial, sans-serif;
+      }
     }
   }
 }
