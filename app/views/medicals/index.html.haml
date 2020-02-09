@@ -5,8 +5,12 @@
     .hoiku-header_keizi
       掲示板
     .hoiku-header_create
-      =form_with do |f|
-        =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='/medicals/new'"
+      - if user_signed_in? && current_user.id == 1
+        =form_with do |f|
+          =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='/medicals/new'"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
+      - elsif user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
   .hoiku_main
     .hoiku_main_sidebar
       = render "tweets/sidebar"
@@ -28,5 +32,6 @@
             = link_to '病院のサイトへ行く', '' if medical.site_url.present?
           .hoiku_main_message1_time
             = medical.created_at.strftime("%Y年%m月%d日")
-            =link_to "削除","/medicals/#{medical.id}",method: :delete, class: "destroy_btn"
-            =link_to "編集","/medicals/#{medical.id}/edit", method: :get, class: "edit_btn"
+            - if user_signed_in? && current_user.id == 1
+              =link_to "削除","/medicals/#{medical.id}",method: :delete, class: "destroy_btn"
+              =link_to "編集","/medicals/#{medical.id}/edit", method: :get, class: "edit_btn"

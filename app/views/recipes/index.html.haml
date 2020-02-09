@@ -5,8 +5,12 @@
     .hoiku-header_keizi
       掲示板
     .hoiku-header_create
-      =form_with do |f|
-        =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='/recipes/new'"
+      - if user_signed_in? && current_user.id == 1
+        =form_with do |f|
+          =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='/recipes/new'"
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
+      -else user_signed_in?
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
   .hoiku_main
     .hoiku_main_sidebar
       = render "tweets/sidebar"
@@ -29,6 +33,7 @@
             = simple_format(recipe.recipe)
           .hoiku_main_message1_time
             = recipe.created_at.strftime("%Y年%m月%d日")
-            =link_to "削除","/recipes/#{recipe.id}",method: :delete, class: "destroy_btn"
-            =link_to "編集","/recipes/#{recipe.id}/edit", method: :get, class: "edit_btn"
+            - if user_signed_in? && current_user.id == 1
+              =link_to "削除","/recipes/#{recipe.id}",method: :delete, class: "destroy_btn"
+              =link_to "編集","/recipes/#{recipe.id}/edit", method: :get, class: "edit_btn"
   
