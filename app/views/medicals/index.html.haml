@@ -25,8 +25,8 @@
           .hoiku_main_message1_content
             = simple_format(medical.text)
           .hoiku_main_message1_content2
-            =medical.site_url
+            = link_to '病院のサイトへ行く', ''
           .hoiku_main_message1_time
             = medical.created_at.strftime("%Y年%m月%d日")
-            -# =link_to "削除","/recipes/#{recipe.id}",method: :delete, class: "destroy_btn"
-            -# =link_to "編集","/recipes/#{recipe.id}/edit", method: :get, class: "edit_btn"
+            =link_to "削除","/medicals/#{medical.id}",method: :delete, class: "destroy_btn"
+            =link_to "編集","/medicals/#{medical.id}/edit", method: :get, class: "edit_btn"
