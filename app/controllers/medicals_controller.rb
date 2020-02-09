@@ -21,6 +21,12 @@ class MedicalsController < ApplicationController
     @medical = Medical.find(params[:id])
   end
 
+  def update
+    medical = Medical.find(params[:id])
+    medical.update(medical_params)
+    redirect_to medicals_path
+  end
+
   private
   def medical_params
     params.require(:medical).permit(:title, :text, :image, :map, :site_url)
