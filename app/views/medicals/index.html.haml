@@ -25,7 +25,7 @@
           .hoiku_main_message1_content
             = simple_format(medical.text)
           .hoiku_main_message1_content2
-            = link_to '病院のサイトへ行く', ''
+            = link_to '病院のサイトへ行く', '' if medical.site_url.present?
           .hoiku_main_message1_time
             = medical.created_at.strftime("%Y年%m月%d日")
             =link_to "削除","/medicals/#{medical.id}",method: :delete, class: "destroy_btn"
