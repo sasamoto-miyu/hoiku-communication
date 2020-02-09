@@ -9,7 +9,7 @@
         =form_with do |f|
           =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='/recipes/new'"
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
-      -else user_signed_in?
+      -elsif user_signed_in?
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
   .hoiku_main
     .hoiku_main_sidebar
