@@ -18,13 +18,42 @@
     font-family: arial, sans-serif;
     margin-left: 50px;
   }
+
+  &_create{
+    display: flex;
+    padding-left: 150px;
+  }
 }
 
 .sidebar_btn{
   height: 50px;
   width: 100px;
   background-color: orange;
-  margin-left: 300px;
+  margin-left: 100px;
   color: white;
   font-size: 17px;
+}
+
+.sidebar1_btn{
+  height: 50px;
+  width: 100px;
+  background-color: blue;
+  color: whitesmoke;
+  text-decoration: none;
+  line-height: 50px;
+  text-align: center;
+  font-size: 17px;
+  margin-left: 10px;
+}
+
+.sidebar0_btn{
+  height: 50px;
+  width: 100px;
+  background-color: blue;
+  color: whitesmoke;
+  text-decoration: none;
+  line-height: 50px;
+  text-align: center;
+  font-size: 17px;
+  margin-left: 30px;
 }

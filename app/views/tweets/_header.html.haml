@@ -4,5 +4,12 @@
   .hoiku-header_keizi
     掲示板
   .hoiku-header_create
-    =form_with do |f|
-      =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='tweets/new'"
+    - if user_signed_in? && current_user.id == 1
+      =form_with do |f|
+        =f.button "投稿する", class: "sidebar_btn", onclick: "location.href='tweets/new'"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
+    -elsif user_signed_in?
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
+    - else
+      = link_to "ログイン", new_user_session_path, class: "sidebar1_btn"
+      = link_to "新規登録", new_user_registration_path, class: "sidebar1_btn"
