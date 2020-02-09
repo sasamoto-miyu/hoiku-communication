@@ -1,0 +1,10 @@
+.hoiku
+  .hoiku_header
+    = render "tweets/header"
+  .hoiku_destroy_main
+    .hoiku_destroy_main1
+      .hoiku_destroy_main1-message-space
+        削除に成功しました
+        .hoiku_destroy_main1_message-space-top
+          =form_with do |f|
+            =f.button "トップページへ戻る", class: "top_btn", onclick: "location.href='/medicals'"

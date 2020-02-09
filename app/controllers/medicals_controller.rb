@@ -12,6 +12,15 @@ class MedicalsController < ApplicationController
     redirect_to medicals_path
   end
 
+  def destroy
+    medical = Medical.find(params[:id])
+    medical.destroy
+  end
+
+  def edit
+    @medical = Medical.find(params[:id])
+  end
+
   private
   def medical_params
     params.require(:medical).permit(:title, :text, :image, :map, :site_url)
