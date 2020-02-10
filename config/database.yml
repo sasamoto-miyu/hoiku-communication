@@ -52,6 +52,6 @@ test:
 production:
   <<: *default
   database: hoiku-communication_production
-  username: hoiku-communication
+  username: root
   password: <%= ENV['HOIKU-COMMUNICATION_DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
