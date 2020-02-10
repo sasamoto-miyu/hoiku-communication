@@ -69,3 +69,7 @@ gem 'haml-rails'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick'
 gem 'devise'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
