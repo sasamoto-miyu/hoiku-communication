@@ -74,6 +74,7 @@ gem 'haml-rails'
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'mini_magick'
 gem 'devise'
+gem 'fog-aws'
 
 group :production do
   gem 'unicorn', '5.4.1'
