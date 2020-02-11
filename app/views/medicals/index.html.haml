@@ -11,6 +11,9 @@
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
       - elsif user_signed_in?
         = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "sidebar0_btn"
+      - else
+        = link_to "ログイン", new_user_session_path, class: "sidebar1_btn"
+        = link_to "新規登録", new_user_registration_path, class: "sidebar1_btn"
   .hoiku_main
     .hoiku_main_sidebar
       = render "tweets/sidebar"
@@ -19,19 +22,20 @@
         ここでは、保育園近隣の病院を紹介したり、流行っている病気のついてや、その予防法も紹介します。
         %br
         分からないことや困ったことがあれば、いつでも職員にご相談くださいね！
-      - @medical.each do |medical|
-        .hoiku_main_message1
-          .hoiku_main_message1_title
-            = medical.title
-          .hoiku_main_message1_image-map
-            = image_tag medical.image.url, class: 'lower-message__image' if medical.image.present?
-            = image_tag medical.map.url, class: 'lower-message__image2' if medical.map.present?
-          .hoiku_main_message1_content
-            = simple_format(medical.text)
-          .hoiku_main_message1_content2
-            = link_to '病院のサイトへ行く', '' if medical.site_url.present?
-          .hoiku_main_message1_time
-            = medical.created_at.strftime("%Y年%m月%d日")
-            - if user_signed_in? && current_user.id == 1
-              =link_to "削除","/medicals/#{medical.id}",method: :delete, class: "destroy_btn"
-              =link_to "編集","/medicals/#{medical.id}/edit", method: :get, class: "edit_btn"
+      - if user_signed_in?
+        - @medical.each do |medical|
+          .hoiku_main_message1
+            .hoiku_main_message1_title
+              = medical.title
+            .hoiku_main_message1_image-map
+              = image_tag medical.image.url, class: 'lower-message__image' if medical.image.present?
+              = image_tag medical.map.url, class: 'lower-message__image2' if medical.map.present?
+            .hoiku_main_message1_content
+              = simple_format(medical.text)
+            .hoiku_main_message1_content2
+              = link_to '病院のサイトへ行く', '' if medical.site_url.present?
+            .hoiku_main_message1_time
+              = medical.created_at.strftime("%Y年%m月%d日")
+              - if user_signed_in? && current_user.id == 1
+                =link_to "削除","/medicals/#{medical.id}",method: :delete, class: "destroy_btn"
+                =link_to "編集","/medicals/#{medical.id}/edit", method: :get, class: "edit_btn"
