@@ -65,10 +65,12 @@ passは0908
 です。  
 本番環境にて、投稿をする場合は職員用のアカウントでしか投稿できないので、職員用のアカウントでサインインしてください。  
 利用者のアカウントでは、投稿、編集、削除はできないようになっています。  
-職員用アカウント email: aahoikuen@aaa.ccc  
-              pass : 123456  
-利用者のアカウント email: abc@def.ccc  
-                  pass : 123456
+職員用アカウント  
+email: aahoikuen@aaa.ccc  
+pass : 123456  
+利用者のアカウント  
+email: abc@def.ccc  
+pass : 123456
 
 # DB設計
 ## usersテーブル
