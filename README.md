@@ -59,6 +59,7 @@ https://github.com/sasamoto-miyu/hoiku-communication
 ## 接続先
 本番環境にデプロイしました。
 url:  http://18.176.158.95/
+
 ベーシック認証もついています。
 user_nameは66-i
 passは0908
